@@ -43,9 +43,9 @@ def divicion():
     resultado.config(text=f"El resultado es ,{val3}!")
 
 def limpiar():
-    entrada1.delete(0 tk.END)
-    entrada2.delete(0 tk.END)
-    etiqueta.config(text=f"El resultado es: ")
+    entrada1.delete(0,tk.END)
+    entrada2.delete(0,tk.END)
+    resultado.config(text="El resultado es: ")
 
 boton_suma = tk.Button(ventana, text="Sumar", command=suma)
 boton_suma.pack(pady=5)
@@ -58,5 +58,8 @@ boton_multiplicacion.pack(pady=5)
 
 boton_divicion = tk.Button(ventana, text="Dividir", command=divicion)
 boton_divicion.pack(pady=5)
+
+boton_limpiar = tk.Button(ventana, text="Limpiar", command=limpiar)
+boton_limpiar.pack(pady=5)
 
 ventana.mainloop()
