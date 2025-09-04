@@ -4,7 +4,7 @@ ventana = tk.Tk()
 ventana.title("CALCULADORA")
 ventana.geometry("500x400")
 
-etiqueta = tk.Label(ventana, text="Digita el primer numero:")
+etiqueta = tk.Label(ventana, text="Digita los numeros en los espacios en blanco:")
 etiqueta.pack(pady=5)
 
 entrada1 = tk.Entry(ventana)
@@ -16,30 +16,47 @@ resultado = tk.Label(ventana, text="El resultado es: ")
 resultado.pack(pady=5)
 
 def suma():
-    val1 = entrada1.get()
-    val2 = entrada2.get()
-    val3 = val1 + val2
-    resultado.config(text=f"el resultado es ,{val3}!")
+    val3 = 0
+    val1 = float(entrada1.get())
+    val2 = float(entrada2.get())
+    val3 = (val1 + val2)
+    resultado.config(text=f"El resultado es ,{val3}!")
 
 def resta():
-    entrada1.delete(0, tk.END)
-    etiqueta.config(text="Escribe tu nombre:")
-    pass
-def multiplicacion():
-    pass
-def divicion():
-    pass
+    val3 = 0
+    val1 = float(entrada1.get())
+    val2 = float(entrada2.get())
+    val3 = (val1 - val2)
+    resultado.config(text=f"El resultado es ,{val3}!")
 
-boton_suma = tk.Button(ventana, text="Saludar", command=suma)
+def multiplicacion():
+    val3 = 0
+    val1 = float(entrada1.get())
+    val2 = float(entrada2.get())
+    val3 = (val1 * val2)
+    resultado.config(text=f"El resultado es ,{val3}!")
+def divicion():
+    val3 = 0
+    val1 = float(entrada1.get())
+    val2 = float(entrada2.get())
+    val3 = (val1 / val2)
+    resultado.config(text=f"El resultado es ,{val3}!")
+
+def limpiar():
+    entrada1.delete(0 tk.END)
+    entrada2.delete(0 tk.END)
+    etiqueta.config(text=f"El resultado es: ")
+
+boton_suma = tk.Button(ventana, text="Sumar", command=suma)
 boton_suma.pack(pady=5)
 
-    boton_resta = tk.Button(ventana, text="Limpiar", command=resta)
-    boton_resta.pack(pady=5)
+boton_resta = tk.Button(ventana, text="Restar", command=resta)
+boton_resta.pack(pady=5)
 
-    boton_multiplicacion = tk.Button(ventana, text="Salir", command=multiplicacion)
-    boton_multiplicacion.pack(pady=5)
+boton_multiplicacion = tk.Button(ventana, text="Multiplicar", command=multiplicacion)
+boton_multiplicacion.pack(pady=5)
 
-    boton_divicion = tk.Button(ventana, text="Salir", command=divicion)
-    boton_divicion.pack(pady=5)
+boton_divicion = tk.Button(ventana, text="Dividir", command=divicion)
+boton_divicion.pack(pady=5)
 
-    ventana.mainloop()
+ventana.mainloop()
